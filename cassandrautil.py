@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
-""""
-Class that handles all the code to generate and print tokens.
-
-Based on benjamin black cassandra summit talk (http://www.slideshare.net/benjaminblack/cassandra-summit-2010-operations-troubleshooting-intro).
-Author: Artie Copeland <artie@yestech.org>
-Distributed under the GNU General Public License, version 3.0.
-""""
+#
+#Class that handles all the code to generate and print tokens.
+#
+#Based on benjamin black cassandra summit talk (http://www.slideshare.net/benjaminblack/cassandra-summit-2010-operations-troubleshooting-intro).
+#Author: Artie Copeland <artie@yestech.org>
+#Distributed under the GNU General Public License, version 3.0.
+#
 class CassandraTokens:	
   def nodes(self, nodes):
     self.nodes = nodes
@@ -41,9 +41,10 @@ class CassandraTokens:
 
 import unittest
 from cassandrautil import CassandraTokens
-""""
-Provides unit tests for CassandraTokens
-""""
+
+#
+#Provides unit tests for CassandraTokens
+#
 class CassandraTokensTestCase(unittest.TestCase):
     def setUp(self):
         self.cassandraToken = CassandraTokens()
