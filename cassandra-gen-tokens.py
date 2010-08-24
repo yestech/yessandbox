@@ -11,37 +11,7 @@
 # Latest version: http://github.com/yestech/yessandbox/blob/master/cassandra-gen-tokens.py
 #
 
-class CassandraTokens:	
-  def nodes(self, nodes):
-    self.nodes = nodes
-
-  def generateRing(self):
-    self.ring = []
-    for n in range(nodes):
-        token = self.calculateToken(n)
-        self.ring.append(token)
-
-  def printTokens(self):
-    print("Tokens")
-    for n in range(len(self.ring)):
-        print(self.ring[n])
-
-  def printNodes(self):
-    print("Node\tToken")
-    for n in range(len(self.ring)):
-        print(str(n) +  "\t" + str(self.ring[n]))
-
-  def printRing(self):
-    print("Node\tToken Range")
-    for n in range(len(self.ring)):
-        endToken = (self.ring[(n + 1) % len(self.ring)]) -1
-        if (endToken == -1):
-           endToken = self.calculateToken(self.nodes)
-        tokenRange = "[" + str(self.ring[n]) + " , " + str(endToken) + "]"
-        print(str(n) +  "\t" + tokenRange )
-
-  def calculateToken(self, node):
-     return (node * (pow(2,127) -1)/self.nodes)
+from cassandrautil import CassandraTokens
 
 nodes = int(raw_input("How many nodes in the cluster -> "))
 t = CassandraTokens()

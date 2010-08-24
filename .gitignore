@@ -1,5 +1,6 @@
 *.iml
 *.ipr
 *.iws
+*.pyc
 .DS_Store
 target/
